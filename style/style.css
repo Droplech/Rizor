@@ -1,0 +1,762 @@
+@font-face {
+  font-family: "Rubik Mono One";
+  src: url("../RubicMonoOne/rubikmonooneregular.ttf");
+  src: url("../RubicMonoOne/rubikmonooneregular.woff");
+  src: url("../RubicMonoOne/rubikmonooneregular.woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../roboto/Robotolight.woff2");
+  src: url("../roboto/Robotolight.woff");
+  src: url("../roboto/Robotolight.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../roboto/Roboto.woff2");
+  src: url("../roboto/Roboto.woff");
+  src: url("../roboto/Roboto.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../roboto/Robotomedium.woff2");
+  src: url("../roboto/Robotomedium.woff");
+  src: url("../roboto/Robotomedium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../roboto/Robotobold.woff2");
+  src: url("../roboto/Robotobold.woff");
+  src: url("../roboto/Robotobold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../roboto/Robotoblack.woff2");
+  src: url("../roboto/Robotoblack.woff");
+  src: url("../roboto/Robotoblack.ttf");
+  font-weight: 900;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  font-family: "Roboto";
+}
+
+.nav {
+  height: 100px;
+}
+.nav .nav__body {
+  width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+.nav .nav__body .nav__menu {
+  padding-top: 10px;
+}
+.nav .nav__body .nav__menu .nav__ul {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav .nav__body .nav__menu .nav__ul .nav__li {
+  align-items: center;
+  position: relative;
+  letter-spacing: 0px;
+}
+.nav .nav__body .nav__menu .nav__ul .nav__li .nav__item {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: 0.3s;
+  font-weight: bold;
+  color: #000;
+}
+.nav .nav__body .nav__menu .nav__ul .nav__li:after {
+  content: "";
+  background-color: #3A30F8;
+  width: 20px;
+  height: 1px;
+  position: absolute;
+  bottom: -4px;
+  left: -10px;
+  display: none;
+  transition: 0.3s;
+}
+.nav .nav__body .nav__menu .nav__ul .nav__li:hover {
+  letter-spacing: 1px;
+}
+.nav .nav__body .nav__menu .nav__ul .nav__li:hover .nav__item {
+  font-size: 15px;
+  transition: 0.3s;
+}
+.nav .nav__body .nav__menu .nav__ul .nav__li:hover:after {
+  display: block;
+  transition: 0.3s;
+}
+.nav .nav__body .nav__burger {
+  display: none;
+}
+.nav .nav__body .nav__burger .nav__burger-button {
+  position: fixed;
+  width: 100px;
+  height: 70px;
+  top: 9px;
+  right: 5px;
+  z-index: 50;
+  background-color: #3A2FF7;
+  border-radius: 15px;
+}
+.nav .nav__body .nav__burger .nav__burger-button .nav__burger-item {
+  position: absolute;
+  height: 3px;
+  width: 50px;
+  background-color: #fff;
+}
+.nav .nav__body .nav__burger .nav__burger-button .burger-itemOne {
+  margin: 25px 0 0 25px;
+}
+.nav .nav__body .nav__burger .nav__burger-button .burger-itemTwo {
+  margin: 35px 0 0 25px;
+}
+.nav .nav__body .nav__burger .nav__burger-button .burger-itemThree {
+  margin: 45px 0 0 25px;
+}
+.nav .nav__body .nav__burger .nav__burger-content {
+  padding: 90px 0;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 15%;
+  background-color: rgba(58, 47, 247, 0.9);
+  display: none;
+  z-index: 30;
+  border-radius: 15px;
+}
+.nav .nav__body .nav__burger .nav__burger-content .nav__burger-body {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+.nav .nav__body .nav__burger .nav__burger-content .nav__burger-body .nav__a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 34px;
+  text-transform: uppercase;
+  line-height: 65px;
+}
+.nav .nav__body .nav__burger .active .nav__burger-item {
+  position: absolute;
+  height: 3px;
+  width: 50px;
+  background-color: #fff;
+  margin: 30px 0 0 20px;
+}
+.nav .nav__body .nav__burger .active .burger-itemOne {
+  margin: 35px 0 0 25px;
+  transform: rotate(-45deg);
+}
+.nav .nav__body .nav__burger .active .burger-itemTwo {
+  margin: 30px 0 0 20px;
+  display: none;
+}
+.nav .nav__body .nav__burger .active .burger-itemThree {
+  margin: 35px 0 0 25px;
+  transform: rotate(45deg);
+}
+
+.title {
+  font-family: "Rubik Mono One";
+}
+
+.present {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 200px;
+  position: relative;
+}
+.present .present_bg {
+  position: absolute;
+  top: -40px;
+}
+.present .present__left {
+  width: 827px;
+  position: relative;
+}
+.present .present__left .present__body {
+  width: 610px;
+  top: 200px;
+  left: 373px;
+  position: absolute;
+}
+.present .present__left .present__body .present___title {
+  font-size: 80px;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+}
+.present .present__left .present__body .present___title .present___span {
+  letter-spacing: -10px;
+}
+.present .present__left .present__body .present__subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+.present .present__left .present__body .subtitle {
+  width: 250px;
+}
+.present .present__left .present__img {
+  position: absolute;
+  right: -50px;
+  top: 72px;
+  cursor: pointer;
+}
+.present .present__left .present__arrow {
+  position: absolute;
+  bottom: 10%;
+  left: 48%;
+}
+.present .present__media {
+  position: fixed;
+  z-index: 6;
+  height: 400px;
+  width: 2px;
+  right: 100px;
+}
+.present .present__media .present__line {
+  position: absolute;
+  height: 327px;
+  width: 1px;
+  background-color: #5148F9;
+}
+.present .present__media .lineTwo {
+  top: 445px;
+  left: 0;
+}
+.present .present__media .present__poin {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid;
+  border-color: transparent;
+  top: 83%;
+  right: -11px;
+}
+.present .present__media .present__poin .present__check {
+  width: 8px;
+  height: 8px;
+  background-color: #3A30F8;
+  border-radius: 50%;
+  margin: 6px auto 0 auto;
+}
+.present .present__media .present__poin:hover {
+  border-color: #3A30F8;
+}
+.present .present__media .present__poin:hover .present__check {
+  background-color: transparent;
+}
+.present .present__media .pointTwo {
+  top: 90%;
+}
+.present .present__media .pointThree {
+  top: 97%;
+}
+.present .present__media .pointFour {
+  top: 104%;
+}
+
+.design-subtitle {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.advent {
+  display: flex;
+  padding: 0 0 240px 0;
+  height: 1000px;
+}
+.advent .advent__right {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.advent .advent__right .advent__firstcol {
+  margin: 98px 0 0 100px;
+}
+.advent .advent__right .advent__firstcol .advent__title {
+  font-size: 40px;
+  font-weight: 400;
+  margin: 90px 0 35px 0;
+  text-transform: uppercase;
+}
+.advent .advent__right .advent__firstcol .advent__span {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #3A30F8;
+  text-transform: uppercase;
+}
+.advent .advent__right .advent__firstcol .advent__subtitle {
+  margin: 0;
+  width: 240px;
+}
+.advent .advent__right .advent__firstcol .advent__list {
+  width: 250px;
+  margin: 0;
+  padding: 0 0 0 0;
+  list-style: none;
+}
+.advent .advent__right .advent__firstcol .advent__list .advent__item {
+  display: flex;
+  margin: 40px 0 0 0;
+}
+.advent .advent__right .advent__firstcol .advent__list .advent__item .advent__dash {
+  width: 30px;
+  margin: 0 14px 0 0;
+}
+.advent .advent__right .advent__seccol {
+  margin: 470px 0 0 160px;
+  position: relative;
+  height: auto;
+  width: 237px;
+}
+.advent .advent__right .advent__seccol .advent__color {
+  font-weight: 400;
+  margin: 0 0 35px 0;
+}
+.advent .advent__right .advent__seccol .advent__subtitle {
+  width: 240px;
+  margin: 0;
+}
+.advent .advent__right .advent__seccol .advent__catalog {
+  width: 240px;
+  display: flex;
+  margin: 65px 0 0 20px;
+  position: relative;
+  justify-content: space-between;
+}
+.advent .advent__right .advent__seccol .advent__catalog .color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.advent .advent__right .advent__seccol .advent__catalog .advent__yellow {
+  background-color: #E2E837;
+}
+.advent .advent__right .advent__seccol .advent__catalog .advent__blue {
+  background-color: #00B6F1;
+}
+.advent .advent__right .advent__seccol .advent__catalog .advent__red {
+  background-color: #E23232;
+}
+.advent .advent__right .advent__seccol .advent__catalog .advent__beige {
+  background-color: #F0EFEF;
+}
+.advent .advent__right .advent__seccol .advent__catalog .advent__black {
+  background-color: #0C0C0C;
+}
+.advent .advent__right .advent__seccol .advent__catalog .advent__indicator {
+  position: absolute;
+  right: 8px;
+  top: 30px;
+}
+.advent .advent__right .advent__seccol .advent__hoverboard {
+  position: absolute;
+  left: -102px;
+  top: 225px;
+}
+.advent .advent__right .advent__seccol .advent__line {
+  position: absolute;
+  top: 13px;
+  left: -50px;
+}
+.advent .advent__right .advent__bg {
+  position: absolute;
+  right: 0;
+  top: -105px;
+}
+
+.specifications {
+  padding-bottom: 200px;
+}
+.specifications .specifications__row {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.specifications .specifications__row .specifications__leftcol {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 90px 90px 0 0;
+  position: relative;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item {
+  width: 375px;
+  position: relative;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__title {
+  font-size: 40px;
+  font-weight: 400;
+  margin: 0 0 40px 0;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__subtitle {
+  font-size: 18px;
+  width: 370px;
+  margin: 0;
+  line-height: 30px;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__subtitle .specifications__mod {
+  font-weight: bold;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__list .specifications__li {
+  display: flex;
+  font-size: 18px;
+  margin-top: 35px;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__list .specifications__li .specifications__dash {
+  margin-right: 13px;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__list .specifications__li .specifications__dash img {
+  vertical-align: middle;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__info {
+  list-style: none;
+  margin: 90px 0 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 345px;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__info .specifications__points {
+  width: 136px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__info .specifications__points .specifications__subpints-title {
+  font-size: 40px;
+  font-weight: 400;
+  color: #3A30F8;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__info .specifications__points .specifications__subpints-title span {
+  font-size: 20px;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__info .specifications__points .specifications__subpints {
+  text-align: left;
+  color: #7D7D7D;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__line {
+  position: absolute;
+  right: -57px;
+  top: 20px;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__item .specifications__watch {
+  position: absolute;
+  right: -151px;
+  bottom: 63px;
+  cursor: pointer;
+}
+.specifications .specifications__row .specifications__leftcol .specifications__bg {
+  position: absolute;
+  left: 0;
+  top: -20%;
+}
+
+.whow {
+  height: 690px;
+  background-image: url("../img/whow/bg.png");
+  padding: 100px 0 0 0;
+  position: relative;
+}
+.whow .whow__body {
+  width: 710px;
+  display: flex;
+  height: 100%;
+  justify-content: flex-end;
+}
+.whow .whow__body .whow__col {
+  width: 330px;
+  height: 100%;
+}
+.whow .whow__body .whow__col .whow__title {
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  margin: 0 0 85px 0;
+}
+.whow .whow__body .whow__col .whow__subtitle {
+  color: #E5E3FE;
+  font-weight: 300;
+  margin: 0 0 35px 0;
+  line-height: 24px;
+}
+.whow .whow__body .whow__col .whow__subtitle span {
+  color: #fff;
+  font-weight: 600;
+}
+.whow .whow__body .whow__col .whow_button {
+  margin: 65px 0 0 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #534AF9;
+  width: 270px;
+  height: 50px;
+  border: none;
+  border-radius: 30px;
+  text-transform: uppercase;
+  box-shadow: 0 7px 10px #2E26C8;
+  cursor: pointer;
+  outline: none;
+}
+.whow .whow__img {
+  position: absolute;
+  top: -60px;
+  right: 0;
+}
+
+@media screen and (max-width: 1600px) {
+  .present__body {
+    z-index: 2;
+  }
+
+  .present__right {
+    z-index: 1;
+  }
+
+  .present__img {
+    z-index: 2;
+  }
+
+  .whow__col {
+    z-index: 1;
+  }
+
+  .specifications__rightcol {
+    width: 110%;
+  }
+  .specifications__rightcol img {
+    width: 100%;
+  }
+
+  .specifications__line {
+    display: none;
+  }
+
+  .advent__catalog {
+    margin: 65px 0 0 0;
+  }
+
+  .advent .advent__right .advent__seccol {
+    margin: 470px 0 0 60px;
+  }
+
+  .specifications .specifications__row .specifications__leftcol .specifications__bg {
+    top: -70%;
+  }
+
+  .present .present__left .present__body {
+    left: 413px;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .advent {
+    padding: 0 0 270px 0;
+    height: auto;
+    flex-direction: column;
+  }
+  .advent .advent__left {
+    width: 40%;
+    margin: 0 auto;
+  }
+  .advent .advent__left img {
+    width: 100%;
+  }
+  .advent .advent__right {
+    height: 800px;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .advent .advent__right .advent__seccol {
+    margin: 270px 0 0 80px;
+  }
+  .advent .advent__right .advent__bg {
+    right: -15%;
+    top: -45%;
+  }
+
+  .nav .nav__body {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .present__media {
+    display: none;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .present .present_bg {
+    display: none;
+  }
+  .present .present__left .present__body {
+    left: 40px;
+    top: 30px;
+  }
+  .present .present__left .present__img {
+    right: -50px;
+    top: 75%;
+    position: absolute;
+  }
+  .present .present__right {
+    width: 204%;
+  }
+  .present .present__right img {
+    width: 100%;
+  }
+
+  .advent .advent__right .advent__bg {
+    display: none;
+  }
+
+  .specifications .specifications__row .specifications__leftcol .specifications__item .specifications__watch {
+    bottom: 45%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .advent {
+    padding: 0 0 30px 0;
+  }
+  .advent .advent__right {
+    width: 100%;
+  }
+
+  .present .present__left .present__body {
+    width: 440px;
+  }
+  .present .present__left .present__body .present___title {
+    font-size: 50px;
+  }
+  .present .present__left .present__arrow {
+    display: none;
+  }
+
+  .specifications .specifications__row {
+    flex-direction: column;
+  }
+  .specifications .specifications__row .specifications__leftcol .specifications__bg {
+    display: none;
+  }
+  .specifications .specifications__row .specifications__leftcol .specifications__item {
+    margin: 0 auto;
+  }
+  .specifications .specifications__row .specifications__rightcol {
+    width: 80%;
+    margin: 45px auto;
+  }
+}
+@media screen and (max-width: 730px) {
+  .whow .whow__img {
+    width: 90%;
+    right: 38px;
+  }
+  .whow .whow__img img {
+    width: 100%;
+  }
+  .whow .whow__body {
+    width: 100%;
+  }
+  .whow .whow__body .whow__col {
+    width: auto;
+    height: auto;
+    margin: 333px auto 0 auto;
+  }
+  .whow .whow__body .whow__col .whow__title {
+    margin: 0 0 30px 0;
+  }
+  .whow .whow__body .whow__col .whow__subtitle {
+    margin: 0 0 20px 0;
+  }
+  .whow .whow__body .whow__col .whow_button {
+    margin: 20px 0 0 0;
+  }
+
+  .advent .advent__right {
+    flex-direction: column;
+    height: auto;
+  }
+  .advent .advent__right .advent__seccol {
+    width: 280px;
+    height: 600px;
+    margin: 70px auto 0 auto;
+  }
+  .advent .advent__left {
+    width: 60%;
+  }
+
+  .specifications .specifications__row .specifications__leftcol .specifications__item .specifications__watch {
+    display: none;
+  }
+
+  .present .present__left .present__img {
+    display: none;
+  }
+
+  .nav .nav__body .nav__burger {
+    display: block;
+  }
+  .nav .nav__body .nav__menu {
+    display: none;
+  }
+  .nav .nav__body .nav__burger .nav__burger-content {
+    width: 100%;
+    height: 20%;
+    
+  }
+}
+@media screen and (max-width: 500px) {
+  .present .present__left .present__body {
+    width: 284px;
+  }
+  .present .present__left .present__body .present___title {
+    font-size: 28px;
+  }
+  .present .present__left .present__body .present__subtitle {
+    font-size: 14px;
+  }
+
+  .whow .whow__body {
+    margin: 0 auto;
+    width: 87%;
+  }
+  .whow .whow__body .whow__col {
+    margin: 200px 0 0 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
